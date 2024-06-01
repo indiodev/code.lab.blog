@@ -1,5 +1,6 @@
 import { Heart } from 'lucide-react';
 
+import { cn } from 'App/lib/utils';
 import { Button } from 'Components/ui/button';
 import {
 	CardContent,
@@ -8,7 +9,9 @@ import {
 	Card as Root,
 } from 'Components/ui/card';
 import type { Post } from 'Models/post';
+import { useFavorite } from 'Store/post/favorites';
 export function PostCard({ data }: { data: Post }): React.ReactElement {
+	const { toggle, favorite_list } = useFavorite();
 	return (
 		<Root className="border-search hover:ring-2 hover:ring-red-blog bg-transparent py-8 px-8 sm:px-10 sm:py-10">
 			<CardHeader className="flex justify-between flex-row p-0 items-center space-y-0">
@@ -17,8 +20,16 @@ export function PostCard({ data }: { data: Post }): React.ReactElement {
 						dateStyle: 'medium',
 					}).format(new Date(data.created_at))}
 				</CardDescription>
-				<Button className="bg-transparent p-0">
-					<Heart className="text-red-blog fill-red-blog w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+				<Button
+					className="bg-transparent p-0"
+					onClick={() => toggle(data.id)}
+				>
+					<Heart
+						className={cn(
+							'text-red-blog w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7',
+							favorite_list.includes(data.id) && 'fill-red-blog',
+						)}
+					/>
 				</Button>
 			</CardHeader>
 			<CardContent className="text-white font-medium gap-4 flex flex-col p-0">

@@ -68,7 +68,8 @@
 					["Lib", "./app/lib"],
 					["Pages", "./app/pages"],
 					["Routes", "./app/routes"],
-					["Models", "./app/models"]
+					["Models", "./app/models"],
+					["Store", "./app/store"]
 				],
 				"extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
 			}

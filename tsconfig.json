@@ -8,7 +8,8 @@
 			"Lib/*": ["./app/lib/*"],
 			"Pages/*": ["./app/pages/*"],
 			"Routes/*": ["./app/routes/*"],
-			"Models/*": ["./app/models/*"]
+			"Models/*": ["./app/models/*"],
+			"Store/*": ["./app/store/*"]
 		},
 
 		"target": "ES2020",

@@ -14,6 +14,7 @@ export default defineConfig({
 			Pages: resolve(__dirname, './app/pages'),
 			Routes: resolve(__dirname, './app/routes'),
 			Models: resolve(__dirname, './app/models'),
+			Store: resolve(__dirname, './app/store'),
 		},
 	},
 });

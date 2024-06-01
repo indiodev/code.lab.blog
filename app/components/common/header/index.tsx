@@ -1,8 +1,10 @@
 import { useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { Input } from 'Components/ui/input';
 
 export function Header(): React.ReactElement {
+	const [searchParams, setSearchParams] = useSearchParams();
 	const inputSearchRef = useRef<HTMLInputElement | null>(null);
 	return (
 		<header className="flex w-full bg-header py-12 sm:py-16">
@@ -14,11 +16,23 @@ export function Header(): React.ReactElement {
 				<form
 					onSubmit={(event) => {
 						event.preventDefault();
-						console.log(inputSearchRef.current?.value);
+
+						if (inputSearchRef?.current) {
+							setSearchParams({ search: inputSearchRef.current.value! });
+						}
 					}}
 				>
 					<Input
 						ref={inputSearchRef}
+						defaultValue={searchParams.get('search') || ''}
+						onChange={(event) => {
+							if (!event.target.value) {
+								setSearchParams({});
+								return;
+							}
+						}}
+						name="search"
+						id="search"
 						placeholder="Pesquisar no blog"
 						className="w-full h-14 rounded-lg bg-search text-white border-0 ring-offset-search text-sm sm:text-xl"
 					/>

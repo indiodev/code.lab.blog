@@ -1,3 +1,5 @@
+import { useSearchParams } from 'react-router-dom';
+
 import type { Post } from 'Models/post';
 
 import { PostCard } from './post.card';
@@ -38,14 +40,26 @@ const data_list: Post[] = [
 ];
 
 export function Blogs(): React.ReactElement {
+	const [searchParams] = useSearchParams();
+	const search = searchParams.get('search');
+
+	const posts = data_list.filter((post) => post.title.includes(search ?? ''));
+
 	return (
 		<section className="container flex flex-col gap-10">
-			{data_list.map((post) => (
-				<PostCard
-					data={post}
-					key={post.id}
-				/>
-			))}
+			{posts.length === 0 && (
+				<p className="text-white text-center">
+					Nenhuma postagem encontrada para <strong>{search}</strong>
+				</p>
+			)}
+
+			{posts.length > 0 &&
+				posts.map((post) => (
+					<PostCard
+						data={post}
+						key={post.id}
+					/>
+				))}
 		</section>
 	);
 }
