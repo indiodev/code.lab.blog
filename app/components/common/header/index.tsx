@@ -7,7 +7,7 @@ export function Header(): React.ReactElement {
 	return (
 		<header className="flex w-full bg-header py-12 sm:py-16">
 			<section className="container flex flex-col gap-8 sm:gap-12">
-				<h1 className="text-2xl sm:text-[40px] font-medium text-center">
+				<h1 className="text-2xl md:text-[40px] font-medium text-center">
 					<span className="text-white">Code</span>
 					<span className="text-red-blog">Lab</span>
 				</h1>
