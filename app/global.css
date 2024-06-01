@@ -38,7 +38,28 @@
     --search: 240, 6%, 13%, 1;
     --red-blog: 10, 66%, 64%, 1;
     --gray-blog: 240, 5%, 7%, 1;
-    --border-blog: 240, 5%, 15%, 1;
+
+      /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    /* border-radius: 5px; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--red-blog));
+    /* border-radius: 5px; */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
   }
 
   .dark {

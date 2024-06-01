@@ -1,6 +1,6 @@
 import type { Post } from 'Models/post';
 
-import { Card } from './card';
+import { PostCard } from './post.card';
 
 const data_list: Post[] = [
 	{
@@ -39,15 +39,13 @@ const data_list: Post[] = [
 
 export function Blogs(): React.ReactElement {
 	return (
-		<main className="bg-gray-blog flex-1 h-full py-20">
-			<section className="container flex flex-col gap-10">
-				{data_list.map((post) => (
-					<Card
-						data={post}
-						key={post.id}
-					/>
-				))}
-			</section>
-		</main>
+		<section className="container flex flex-col gap-10">
+			{data_list.map((post) => (
+				<PostCard
+					data={post}
+					key={post.id}
+				/>
+			))}
+		</section>
 	);
 }

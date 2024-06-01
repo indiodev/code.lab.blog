@@ -5,9 +5,9 @@ import { Input } from 'Components/ui/input';
 export function Header(): React.ReactElement {
 	const inputSearchRef = useRef<HTMLInputElement | null>(null);
 	return (
-		<header className="flex w-full bg-header py-16">
-			<section className="container flex flex-col gap-12">
-				<h1 className="text-[40px] font-medium text-center">
+		<header className="flex w-full bg-header py-12 sm:py-16">
+			<section className="container flex flex-col gap-8 sm:gap-12">
+				<h1 className="text-2xl sm:text-[40px] font-medium text-center">
 					<span className="text-white">Code</span>
 					<span className="text-red-blog">Lab</span>
 				</h1>
@@ -20,7 +20,7 @@ export function Header(): React.ReactElement {
 					<Input
 						ref={inputSearchRef}
 						placeholder="Pesquisar no blog"
-						className="w-full h-14 rounded-lg bg-search text-white border-0 ring-offset-search text-xl"
+						className="w-full h-14 rounded-lg bg-search text-white border-0 ring-offset-search text-sm sm:text-xl"
 					/>
 					<button
 						className="sr-only"
