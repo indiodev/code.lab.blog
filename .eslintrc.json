@@ -1,0 +1,77 @@
+{
+	"root": true,
+	"env": { "browser": true, "es2023": true },
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:import/recommended",
+		"plugin:prettier/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 13,
+		"sourceType": "module"
+	},
+	"ignorePatterns": ["dist", ".eslintrc.json"],
+	"plugins": [
+		"react-refresh",
+		"react",
+		"react-hooks",
+		"@typescript-eslint",
+		"import",
+		"prettier"
+	],
+	"rules": {
+		"react/prop-types": "off",
+		"react-refresh/only-export-components": [
+			"warn",
+			{ "allowConstantExport": true }
+		],
+		"react/react-in-jsx-scope": "off",
+		"prettier/prettier": "error",
+		"@typescript-eslint/consistent-type-imports": [
+			"error",
+			{
+				"prefer": "type-imports"
+			}
+		],
+		"@typescript-eslint/explicit-function-return-type": [
+			"error",
+			{
+				"allowTypedFunctionExpressions": true
+			}
+		],
+		"import/order": [
+			"error",
+			{
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				},
+				"groups": [["builtin", "external"], "internal", "parent", "sibling"],
+				"newlines-between": "always"
+			}
+		]
+	},
+	"settings": {
+		"import/resolver": {
+			"alias": {
+				"map": [
+					["App", "./app"],
+					["Components", "./app/components"],
+					["Layouts", "./app/layouts"],
+					["Lib", "./app/lib"],
+					["Pages", "./app/pages"],
+					["Routes", "./app/routes"],
+					["Models", "./app/models"]
+				],
+				"extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+			}
+		}
+	}
+}
