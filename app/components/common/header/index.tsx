@@ -14,6 +14,7 @@ export function Header(): React.ReactElement {
 					<span className="text-red-blog">Lab</span>
 				</h1>
 				<form
+					className="flex flex-col space-y-2"
 					onSubmit={(event) => {
 						event.preventDefault();
 
@@ -36,6 +37,9 @@ export function Header(): React.ReactElement {
 						placeholder="Pesquisar no blog"
 						className="w-full h-14 rounded-lg bg-search text-white border-0 ring-offset-search text-sm sm:text-xl"
 					/>
+					<span className="text-gray-500 text-right">
+						Aperte enter para pesquisar
+					</span>
 					<button
 						className="sr-only"
 						type="submit"
