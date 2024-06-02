@@ -37,6 +37,22 @@ const data_list: Post[] = [
 		slug: 'github-agora-permite-fazer-login-sem-precisar-de-senha',
 		title: 'GitHub agora permite fazer login sem precisar de senha',
 	},
+	{
+		id: 5,
+		created_at: new Date().toString(),
+		description:
+			'O GitHub anunciou nesta quarta-feira (12) o acesso a partir das passkeys, método de autenticação sem senhas. A novidade está disponível em uma versão beta pública e pode substituir a autenticação em dois fatores.',
+		slug: 'github-agora-permite-fazer-login-sem-precisar-de-senha',
+		title: 'GitHub agora permite fazer login sem precisar de senha',
+	},
+	{
+		id: 6,
+		created_at: new Date().toString(),
+		description:
+			'O GitHub anunciou nesta quarta-feira (12) o acesso a partir das passkeys, método de autenticação sem senhas. A novidade está disponível em uma versão beta pública e pode substituir a autenticação em dois fatores.',
+		slug: 'github-agora-permite-fazer-login-sem-precisar-de-senha',
+		title: 'GitHub agora permite fazer login sem precisar de senha',
+	},
 ];
 
 export function Blogs(): React.ReactElement {
