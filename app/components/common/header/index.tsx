@@ -1,6 +1,8 @@
+import { Search } from 'lucide-react';
 import { useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
+import { Button } from 'Components/ui/button';
 import { Input } from 'Components/ui/input';
 
 export function Header(): React.ReactElement {
@@ -14,7 +16,7 @@ export function Header(): React.ReactElement {
 					<span className="text-red-blog">Lab</span>
 				</h1>
 				<form
-					className="flex flex-col space-y-2"
+					className="flex"
 					onSubmit={(event) => {
 						event.preventDefault();
 
@@ -35,17 +37,15 @@ export function Header(): React.ReactElement {
 						name="search"
 						id="search"
 						placeholder="Pesquisar no blog"
-						className="w-full h-14 rounded-lg bg-search text-white border-0 ring-offset-search text-sm sm:text-xl"
+						className="rounded-tr-none rounded-br-none flex-1 w-full h-14 bg-search text-white border-0 ring-0  focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-transparent text-sm sm:text-xl"
 					/>
-					<span className="text-gray-500 text-right">
-						Aperte enter para pesquisar
-					</span>
-					<button
-						className="sr-only"
+
+					<Button
+						className="h-full bg-gray-blog rounded-tl-none rounded-bl-none"
 						type="submit"
 					>
-						Pesquisar
-					</button>
+						<Search />
+					</Button>
 				</form>
 			</section>
 		</header>
