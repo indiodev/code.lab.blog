@@ -41,7 +41,7 @@ export function Header(): React.ReactElement {
 					<span className="text-red-blog">Lab</span>
 				</h1>
 				<form
-					className="flex"
+					className="flex w-full"
 					onSubmit={(event) => {
 						event.preventDefault();
 

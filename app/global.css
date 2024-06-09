@@ -47,13 +47,11 @@
   /* Track */
   ::-webkit-scrollbar-track {
     background: transparent;
-    /* border-radius: 5px; */
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--red-blog));
-    /* border-radius: 5px; */
   }
   
   /* Handle on hover */

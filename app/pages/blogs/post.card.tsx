@@ -13,7 +13,7 @@ import { useFavorite } from 'Store/post/favorites';
 export function PostCard({ data }: { data: Post }): React.ReactElement {
 	const { toggle, favorite_list } = useFavorite();
 	return (
-		<Root className="border-search hover:ring-2 hover:ring-red-blog bg-transparent py-8 px-8 sm:px-10 sm:py-10 transition-all duration-700">
+		<Root className="border-search hover:ring-2 hover:ring-red-blog bg-transparent py-8 px-8 sm:px-10 sm:py-10 transition-all duration-700 border">
 			<CardHeader className="flex justify-between flex-row p-0 items-center space-y-0">
 				<CardDescription className="text-red-blog font-medium text-xs sm:text-sm md:text-base p-0 transition-all duration-700">
 					{new Intl.DateTimeFormat('pt-BR', {

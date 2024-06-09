@@ -62,7 +62,7 @@ export function Blogs(): React.ReactElement {
 	const posts = data_list.filter((post) => post.title.includes(search ?? ''));
 
 	return (
-		<section className="container flex flex-col gap-10">
+		<section className="container flex flex-col gap-10 w-full">
 			{posts.length === 0 && (
 				<p className="text-white text-center">
 					Nenhuma postagem encontrada para <strong>{search}</strong>
